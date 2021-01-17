@@ -31,7 +31,30 @@
 - 正则表达式
 - 函数的高级应用
 - 面向对象高级应用
-- 常用标准库学习
+- 常用库学习
+    - os模块
+    - sys模块
+    - time模块
+    - datetime模块
+    - random模块
+    - json和pickle模块
+    - hashlib和hmac模块
+    - logging模块
+    - re模块
+    - typing模块
+    - collections模块
+    
+    - numpy模块
+    - pandas模块
+    - matplotlib模块
+    
+    - pathlib模块（了解）
+    - shutil模块(了解)
+    - xml模块(了解)
+    - subprocess模块(了解)
+    - Python常用模块小结
+    - [awesome-python开源库中文](https://github.com/jobbole/awesome-python-cn)
+    - [awesome-python开源库](https://github.com/vinta/awesome-python)
 
 ### 高级编程实践
 - Pycharm IDE
