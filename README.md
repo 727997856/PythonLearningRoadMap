@@ -88,6 +88,7 @@ Python后端开发则需要熟练掌握Web框架的应用，掌握接口通信�
 爬下来的数据也可以为数据分析做准备。
 
 - 爬虫开发
+    - [爬虫示例程序及模拟登陆各大网站开源项目](https://github.com/Kr1s77/awesome-python-login-model)
 - scrapy框架
 - 索引操作
 - 备份和回复
