@@ -44,6 +44,7 @@
 - 代码优化
 - 设计模式
 - Linux系统应用
+    - [Linux入门 系统教程](https://www.cnblogs.com/ysocean/p/7712412.html)
 
 ### Web后端开发
 Python主要作为Web系统开发的后端语言，较少参与Web前端开发，但在Web开发过程中仍需要掌握一定的前端知识，如基础的HTML、CSS和JS。
@@ -76,6 +77,8 @@ Python后端开发则需要熟练掌握Web框架的应用，掌握接口通信�
 学完之后数据清洗，数据展示没有问题，用python画出了图才能给别人讲出有意思的故事，同时也能为学习人工智能打下牢固的基础。
 
 - 数据结构和算法
+    - [Python数据结构与算法开源项目](https://github.com/dashidhy/algorithm-pattern-python)
+    - [数据结构与算法 在线文档](https://greyireland.gitbook.io/algorithm-pattern/)
 - 科学计算pandas和numpy
 - 数据可视化matplotlib和seaborn
 - 科学计算包Scipy
