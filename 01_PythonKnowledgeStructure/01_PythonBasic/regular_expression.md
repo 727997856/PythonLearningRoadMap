@@ -6,10 +6,10 @@
 正则表达式并不是Python的一部分。正则表达式是用于处理字符串的强大工具，拥有自己独特的语法以及一个独立的处理引擎，效率上可能不如str自带的方法，但功能十分强大。得益于这一点，在提供了正则表达式的语言里，正则表达式的语法都是一样的，区别只在于不同的编程语言实现支持的语法数量不同；但不用担心，不被支持的语法通常是不常用的部分。如果已经在其他语言里使用过正则表达式，只需要简单看一看就可以上手了。
 
 下图展示了使用正则表达式进行匹配的流程：
-![re_exp_flow](./images/re_flow.png?raw=true)
+![re_exp_flow](https://img-blog.csdnimg.cn/20210119011248725.png)
 
 下图列出了Python支持的正则表达式元字符和语法：   
-![re_exp_grammar](./images/re_grammar.png?raw=true)
+![re_exp_grammar](https://img-blog.csdnimg.cn/20210119011538101.png)
 
 ### 1.2 数量词的贪婪模式与非贪婪模式
 正则表达式通常用于在文本中查找匹配的字符串。Python里数量词默认是贪婪的（在少数语言里也可能是默认非贪婪），总是尝试匹配尽可能多的字符；非贪婪的则相反，总是尝试匹配尽可能少的字符。例如：正则表达式"ab*"如果用于查找"abbbc"，将找到"abbb"。而如果使用非贪婪的数量词"ab*?"，将找到"a"。
@@ -71,35 +71,35 @@ Match对象是一次匹配的结果，包含了很多关于此次匹配的信息
 
 **属性：**
 
-    1. string: 匹配时使用的文本。
-    2. re: 匹配时使用的Pattern对象。
-    3. pos: 文本中正则表达式开始搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。
-    4. endpos: 文本中正则表达式结束搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。
-    5. lastindex: 最后一个被捕获的分组在文本中的索引。如果没有被捕获的分组，将为None。
-    6. lastgroup: 最后一个被捕获的分组的别名。如果这个分组没有别名或者没有被捕获的分组，将为None。
+1. string: 匹配时使用的文本。
+2. re: 匹配时使用的Pattern对象。
+3. pos: 文本中正则表达式开始搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。
+4. endpos: 文本中正则表达式结束搜索的索引。值与Pattern.match()和Pattern.seach()方法的同名参数相同。
+5. lastindex: 最后一个被捕获的分组在文本中的索引。如果没有被捕获的分组，将为None。
+6. lastgroup: 最后一个被捕获的分组的别名。如果这个分组没有别名或者没有被捕获的分组，将为None。
 
 **方法：**
 
-    1. group([group1, …]): 
-    获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。
-    
-    2. groups([default]): 
-    以元组形式返回全部分组截获的字符串。相当于调用group(1,2,…last)。default表示没有截获字符串的组以这个值替代，默认为None。
-    
-    3. groupdict([default]): 
-    返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上。
-    
-    4. start([group]): 
-    返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0。
-    
-    5. end([group]): 
-    返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0。
-    
-    6. span([group]): 
-    返回(start(group), end(group))。
-    
-    7. expand(template): 
-    将匹配到的分组代入template中然后返回。template中可以使用\id或\g<id>、\g<name>引用分组，但不能使用编号0。\id与\g<id>是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符'0'，只能使用\g<1>0。
+1. group([group1, …]): 
+获得一个或多个分组截获的字符串；指定多个参数时将以元组形式返回。group1可以使用编号也可以使用别名；编号0代表整个匹配的子串；不填写参数时，返回group(0)；没有截获字符串的组返回None；截获了多次的组返回最后一次截获的子串。
+
+2. groups([default]): 
+以元组形式返回全部分组截获的字符串。相当于调用group(1,2,…last)。default表示没有截获字符串的组以这个值替代，默认为None。
+
+3. groupdict([default]): 
+返回以有别名的组的别名为键、以该组截获的子串为值的字典，没有别名的组不包含在内。default含义同上。
+
+4. start([group]): 
+返回指定的组截获的子串在string中的起始索引（子串第一个字符的索引）。group默认值为0。
+
+5. end([group]): 
+返回指定的组截获的子串在string中的结束索引（子串最后一个字符的索引+1）。group默认值为0。
+
+6. span([group]): 
+返回(start(group), end(group))。
+
+7. expand(template): 
+将匹配到的分组代入template中然后返回。template中可以使用\id或\g<id>、\g<name>引用分组，但不能使用编号0。\id与\g<id>是等价的；但\10将被认为是第10个分组，如果你想表达\1之后是字符'0'，只能使用\g<1>0。
 
 ```python
 import re
@@ -147,10 +147,10 @@ Pattern不能直接实例化，必须使用re.compile()进行构造。
 
 Pattern提供了几个可读属性用于获取表达式的相关信息：
 
-    1. pattern: 编译时用的表达式字符串。
-    2. flags: 编译时用的匹配模式。数字形式。
-    3. groups: 表达式中分组的数量。
-    4. groupindex: 以表达式中有别名的组的别名为键、以该组对应的编号为值的字典，没有别名的组不包含在内。
+1. pattern: 编译时用的表达式字符串。
+2. flags: 编译时用的匹配模式。数字形式。
+3. groups: 表达式中分组的数量。
+4. groupindex: 以表达式中有别名的组的别名为键、以该组对应的编号为值的字典，没有别名的组不包含在内。
 
 ```python
 import re
@@ -171,15 +171,15 @@ def show_pattern_properties():
 
 **实例方法[ | re模块方法]：**
 
-    1. match(string[, pos[, endpos]]) | re.match(pattern, string[, flags]): 
-    这个方法将从string的pos下标处起尝试匹配pattern；如果pattern结束时仍可匹配，则返回一个Match对象；如果匹配过程中pattern无法匹配，或者匹配未结束就已到达endpos，则返回None。 
-    pos和endpos的默认值分别为0和len(string)；re.match()无法指定这两个参数，参数flags用于编译pattern时指定匹配模式。 
-    注意：这个方法并不是完全匹配。当pattern结束时若string还有剩余字符，仍然视为成功。想要完全匹配，可以在表达式末尾加上边界匹配符'$'。 
-    示例参见2.1小节。
-    
-    2. search(string[, pos[, endpos]]) | re.search(pattern, string[, flags]): 
-    这个方法用于查找字符串中可以匹配成功的子串。从string的pos下标处起尝试匹配pattern，如果pattern结束时仍可匹配，则返回一个Match对象；若无法匹配，则将pos加1后重新尝试匹配；直到pos=endpos时仍无法匹配则返回None。
-    pos和endpos的默认值分别为0和len(string))；re.search()无法指定这两个参数，参数flags用于编译pattern时指定匹配模式。 
+1. match(string[, pos[, endpos]]) | re.match(pattern, string[, flags]): 
+这个方法将从string的pos下标处起尝试匹配pattern；如果pattern结束时仍可匹配，则返回一个Match对象；如果匹配过程中pattern无法匹配，或者匹配未结束就已到达endpos，则返回None。 
+pos和endpos的默认值分别为0和len(string)；re.match()无法指定这两个参数，参数flags用于编译pattern时指定匹配模式。 
+注意：这个方法并不是完全匹配。当pattern结束时若string还有剩余字符，仍然视为成功。想要完全匹配，可以在表达式末尾加上边界匹配符'$'。 
+示例参见2.1小节。
+
+2. search(string[, pos[, endpos]]) | re.search(pattern, string[, flags]): 
+这个方法用于查找字符串中可以匹配成功的子串。从string的pos下标处起尝试匹配pattern，如果pattern结束时仍可匹配，则返回一个Match对象；若无法匹配，则将pos加1后重新尝试匹配；直到pos=endpos时仍无法匹配则返回None。
+pos和endpos的默认值分别为0和len(string))；re.search()无法指定这两个参数，参数flags用于编译pattern时指定匹配模式。 
 ```python
 import re
 def pattern_search():
@@ -196,8 +196,8 @@ def pattern_search():
     # output:
     # world
 ```
-    3. split(string[, maxsplit]) | re.split(pattern, string[, maxsplit]): 
-    按照能够匹配的子串将string分割后返回列表。maxsplit用于指定最大分割次数，不指定将全部分割。
+3. split(string[, maxsplit]) | re.split(pattern, string[, maxsplit]): 
+按照能够匹配的子串将string分割后返回列表。maxsplit用于指定最大分割次数，不指定将全部分割。
 ```python
 import re
 def pattern_split():
@@ -211,8 +211,8 @@ def pattern_split():
     # output:
     # ['one', 'two', 'three', 'four', '']
 ```
-    4. findall(string[, pos[, endpos]]) | re.findall(pattern, string[, flags]): 
-    搜索string，以列表形式返回全部能匹配的子串。
+4. findall(string[, pos[, endpos]]) | re.findall(pattern, string[, flags]): 
+搜索string，以列表形式返回全部能匹配的子串。
 ```python
 import re
 def pattern_findall():
@@ -225,8 +225,8 @@ def pattern_findall():
     # output
     # ['1', '2', '3', '4']
 ```
-    5. finditer(string[, pos[, endpos]]) | re.finditer(pattern, string[, flags]): 
-    搜索string，返回一个顺序访问每一个匹配结果（Match对象）的迭代器。
+5. finditer(string[, pos[, endpos]]) | re.finditer(pattern, string[, flags]): 
+搜索string，返回一个顺序访问每一个匹配结果（Match对象）的迭代器。
 ```python
 import re
 def finditer():
@@ -240,11 +240,11 @@ def finditer():
     # output
     # 1 2 3 4
 ```
-    6. sub(repl, string[, count]) | re.sub(pattern, repl, string[, count]): 
-    使用repl替换string中每一个匹配的子串后返回替换后的字符串。 
-    当repl是一个字符串时，可以使用\id或\g<id>、\g<name>引用分组，但不能使用编号0。 
-    当repl是一个方法时，这个方法应当只接受一个参数（Match对象），并返回一个字符串用于替换（返回的字符串中不能再引用分组）。 
-    count用于指定最多替换次数，不指定时全部替换。
+6. sub(repl, string[, count]) | re.sub(pattern, repl, string[, count]): 
+使用repl替换string中每一个匹配的子串后返回替换后的字符串。 
+当repl是一个字符串时，可以使用\id或\g<id>、\g<name>引用分组，但不能使用编号0。 
+当repl是一个方法时，这个方法应当只接受一个参数（Match对象），并返回一个字符串用于替换（返回的字符串中不能再引用分组）。 
+count用于指定最多替换次数，不指定时全部替换。
 ```python
 import re
 def pattern_sub():
@@ -258,8 +258,8 @@ def pattern_sub():
     # say I, world hello!
     # I Say, Hello World!
 ```
-    7.subn(repl, string[, count]) |re.sub(pattern, repl, string[, count]): 
-    返回 (sub(repl, string[, count]), 替换次数)。 
+7.subn(repl, string[, count]) |re.sub(pattern, repl, string[, count]): 
+返回 (sub(repl, string[, count]), 替换次数)。 
 ```python
 import re
 def pattern_subn():

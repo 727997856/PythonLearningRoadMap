@@ -28,7 +28,7 @@
 - 网络编程
 - 并发编程
 - 数据库编程
-- 正则表达式
+- [正则表达式](./01_PythonKnowledgeStructure/01_PythonBasic/regular_expression.md)
 - 函数的高级应用
 - 面向对象高级应用
 - 常用库学习
