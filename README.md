@@ -104,6 +104,7 @@ Python后端开发则需要熟练掌握Web框架的应用，掌握接口通信�
     - [Python数据结构与算法开源项目](https://github.com/dashidhy/algorithm-pattern-python)
     - [数据结构与算法 在线文档](https://greyireland.gitbook.io/algorithm-pattern/)
 - 科学计算pandas和numpy
+    - [《利用Python进行数据分析·第2版》](https://www.jianshu.com/p/04d180d90a3f)
 - 数据可视化matplotlib和seaborn
 - 科学计算包Scipy
 - 金融数据分析等
